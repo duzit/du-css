@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 相邻兄弟选择器 (+) 介于两个选择器之间，当第二个元素紧跟在第一个元素之后，
+    并且两个元素都是属于同一个父元素的子元素，则第二个元素将被选中 -->
+  <!-- 兄弟选择符，位置无须紧邻，只须同层级，A~B 选择A元素之后所有同层级B元素。 -->
+  <title>相邻兄弟选择器和通用兄弟选择器</title>
+</head>
+<body>
+  <div>
+    <ul>
+      <li class="list1">列表1</li>
+      <li>列表2</li>
+      <li>列表3</li>
+    </ul>
+  </div>
+  <ul>无序列表</ul>
+
+  <div>
+    <span>兄弟选择符</span>
+    <p>位置无须紧邻，只须同层级</p>
+    <span>所有同层级B元素</span>
+  </div>
+</body>
+</html>
+
+<style>
+  /* 无序列表 被选中 */
+  div + ul {
+    background: #aaa;
+  }
+
+  /* 列表2 3 被选中 */
+  li + li {
+    background: salmon;
+  }
+
+  /* 列表2 被选中 */
+  .list1 + li {
+    background: springgreen;
+  }
+
+  /* 通用兄弟选择器 */
+  div p ~ span {
+    color: steelblue;
+    font-size: 30px;
+    font-weight: bold;
+  }
+</style>

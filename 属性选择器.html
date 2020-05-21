@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>属性选择器</title>
+</head>
+<body>
+  <p title="阳光">阳光</p>
+  <p title="太阳">太阳</p>
+  <p title="月亮">月亮</p>
+
+  <a href="bing.cn" title="bing">bing</a>
+  <a href="bing.cn" title="Bing">BING</a>
+  <a href="google.com" title="google">google</a>
+  <a href="baidu.com" title="badidu">badiud</a>
+
+  <br>
+  <input type="text" value="hello">
+  <input type="submit">
+</body>
+</html>
+<style>
+  /* title 等于 '阳光' 的元素 字体颜色为 red */
+  [title='阳光'] {
+    color: red;
+  }
+
+  /* title 中包含 '月' 的元素 字体颜色为 blue */
+  [title*='月'] {
+    color: blue;
+  }
+
+  /* title 首字母包含 '阳' 的元素 字体颜色为 yellow */
+  [title^='阳'] {
+    color: yellow;
+  }
+
+  /* title 结尾属性值是 '阳' 的元素 字体颜色为 green */
+  [title$='阳'] {
+    color: green;
+  }
+
+  /* 首先是 a 标签 且有 title 属性 */
+  a[title] {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  /* a 标签 有title属性 且title属性值包含 bin  区分大小写 */
+  a[title*='bin'] {
+    color: aqua;
+  }
+  /* 不区分大小写 */
+  a[title*='Bin' i] {
+    color: #CCC;
+  }
+  
+  /* a 标签 有title属性 且title属性值以 le 结尾 */
+  a[title$='le'] {
+    font-size: 20px;
+  }
+
+  /* 同 *= */
+  a[title~='du'] {
+    text-decoration: underline;
+  }
+
+  input[type=text] {
+    border: 1px solid red;
+  }
+
+  input[type=submit] {
+    color: blue;
+    font-size: 20px;
+  }
+
+</style>

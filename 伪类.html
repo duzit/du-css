@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>伪类</title>
+</head>
+<body>
+  <a href="https://cn.bing.com/">Bing</a>
+  <p>段落active</p>
+
+  <div>
+    <input type="radio" name="input" value="0" id="yes">
+    <label for="yes">Yes</label>
+    <input type="radio" name="input" value="1" id="no">
+    <label for="no">No</label>
+  </div>
+
+  <div class="cl-disabled">
+    <input type="text" value="name">
+    <input type="text" disabled value="age">
+  </div>
+
+  <div class="cl-th">
+    <p>hello moto</p>
+    <ul>
+      <li>列表1</li>
+      <li>列表2</li>
+      <li>列表3</li>
+      <li>列表4</li>
+      <li>列表5</li>
+      <li>列表6</li>
+    </ul>
+    <p>1234567890</p>
+    <ul>
+      <li>111111111</li>
+      <li>22222222</li>
+      <li>333333333</li>
+      <li>4444444</li>
+    </ul>
+  </div>
+</body>
+</html>
+
+<style>
+  a {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  /* 点击不松的效果 */
+  a:active {
+    font-size: 30px;
+  }
+
+  p:active {
+    color: yellowgreen;
+  }
+
+  p:hover {
+    color: turquoise;
+  }
+
+  input:checked + label {
+    font-size: 20px;
+    color: tomato;
+  }
+  input[type=radio]:checked {
+    box-shadow: 0 0 0 3px orange;
+  }
+
+  .cl-disabled input[type="text"]:disabled {
+    background: violet;
+    cursor: not-allowed;
+  }
+
+  .cl-th p:first-letter {
+    text-transform: uppercase;
+    color: tomato;
+  }
+
+  .cl-th li:first-child {
+    color: tomato;
+  }
+
+  .cl-th li:first-of-type {
+    color: #aaa;
+  }
+
+  .cl-th li:last-child {
+    color: turquoise;
+  }
+</style>

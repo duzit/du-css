@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 当使用  > 选择符分隔两个元素时,它只会匹配那些作为第一个元素的直接后代(子元素)的第二元素 -->
+  <title>子选择器</title>
+</head>
+<body>
+  <div>
+    <span>Span 1. In the div.
+      <span>Span 2. In the span that's in the div.</span>
+    </span>
+    <span>Span 4. In the div. == span1</span>
+  </div>
+  <span>Span 3. Not in a div at all</span>
+</body>
+</html>
+
+<style>
+  span {
+    background: #ccc;
+  }
+  /* Span 1 Span 4 被渲染 */
+  div > span {
+    background: yellowgreen;
+  }
+  
+  /* span1 span2 Span 4 都会被渲染 */
+  /* div span {
+    background: yellowgreen;
+  } */
+</style>
