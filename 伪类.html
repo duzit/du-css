@@ -21,7 +21,7 @@
     <input type="text" disabled value="age">
   </div>
 
-  <div class="cl-th">
+  <div class="cl-th">content1
     <p>hello moto</p>
     <ul>
       <li>列表1</li>
@@ -31,12 +31,30 @@
       <li>列表5</li>
       <li>列表6</li>
     </ul>
+  </div>
+  <div class="content2">content2
     <p>1234567890</p>
     <ul>
       <li>111111111</li>
       <li>22222222</li>
       <li>333333333</li>
       <li>4444444</li>
+    </ul>
+  </div>
+  <div class="content3">content3
+    <ul>
+      <li>aaaaaaaaa</li>
+      <p>aaaaaaa</p>
+      <li>ssssssss</li>
+      <p>sssssssss</p>
+      <li>ddddddddddddd</li>
+      <li>fffffffffff</li>
+    </ul>
+  </div>
+  <div class="content4">
+    <ul>
+      <li>仅有一个li</li>
+      <p>仅有一个li</p>
     </ul>
   </div>
 </body>
@@ -50,6 +68,10 @@
   p {
     font-size: 30px;
     font-weight: bold;
+  }
+
+  div {
+    border-bottom: 2px solid black;
   }
 
   /* 点击不松的效果 */
@@ -78,11 +100,13 @@
     cursor: not-allowed;
   }
 
+  /* 第一个字符 */
   .cl-th p:first-letter {
     text-transform: uppercase;
     color: tomato;
   }
 
+  /* 第一个子元素 */
   .cl-th li:first-child {
     color: tomato;
   }
@@ -91,7 +115,52 @@
     color: #aaa;
   }
 
+  /* 最后一个元素 */
   .cl-th li:last-child {
     color: turquoise;
   }
+
+  /* 基数 */
+  /* .cl-th li:nth-child(2n - 1) {
+    color: blue;
+  } */
+  /* 偶数 */
+  .cl-th li:nth-child(2n) {
+    color: blue;
+  }
+
+  /* 倒数第二个 */
+  .content2 li:nth-last-child(2) {
+    color: blueviolet;
+  }
+
+  /* 遍历所有 li 元素 倒数第三个 li 有效,如果其中包含其他非 li 元素,忽略处理 */
+  .content3 li:nth-last-of-type(3) {
+    color: coral;
+  }
+
+  /* 因为第二个元素不是 li  所以设置无效 */
+  .content3 li:nth-child(2) {
+    color: darkgreen;
+  }
+  /* 找到第二个 li 元素 然后设置 */
+  .content3 li:nth-of-type(2) {
+    color: darkgreen;
+  }
+
+  /* 倒数第三个元素必须是 li 才生效, 如果不是 li 元素 则不生效, 该例子中倒数第三个是 p 元素  */
+  /* .content3 li:nth-last-child(3) {
+    color: darkgreen;
+  } */
+
+  /* 有且只有一个 li 元素 不包含其他元素 才生效 */
+  /* .content4 li:only-child {
+    color: darkorange;
+  } */
+
+  /* 容器里 只有一个 li 元素 不关注是否存在其他元素 有多个 li 元素则不生效 */
+  .content4 li:only-of-type {
+    color: darkorange;
+  }
+  
 </style>
