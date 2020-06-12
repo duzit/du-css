@@ -17,12 +17,22 @@
     </ul>
   </div>
   <ul>无序列表</ul>
+  <p>div+ul 后面的元素p</p>
+  <!-- div + ul 不生效此 ul 元素 -->
+  <ul>无序列表12</ul>
 
   <div>
     <span>兄弟选择符</span>
     <p>位置无须紧邻，只须同层级</p>
     <span>所有同层级B元素</span>
+    <a href="#">alink</a>
+    <span>所有同层级B元素111</span>
   </div>
+
+  <h3>通用选择符 ～</h3>
+  <a href="#">a1</a>
+  <p>a1 p a2</p>
+  <a href="#">a2</a>
 </body>
 </html>
 
@@ -43,9 +53,14 @@
   }
 
   /* 通用兄弟选择器 */
+  /* div 下与 p 同级的 span 元素 即使中间有其他元素 */
   div p ~ span {
     color: steelblue;
     font-size: 30px;
     font-weight: bold;
+  }
+
+  h3 ~ a {
+    color: aquamarine;
   }
 </style>
