@@ -57,6 +57,15 @@
       <p>仅有一个li</p>
     </ul>
   </div>
+  <h3>
+    <p>h1111</p>
+    <p>h2222</p>
+    <p>h3333</p>
+    <p>h4444</p>
+  </h3>
+  <div class="before">
+    title
+  </div>
 </body>
 </html>
 
@@ -162,5 +171,25 @@
   .content4 li:only-of-type {
     color: darkorange;
   }
+
+  /* 偶数 */
+  h3 p:nth-child(even) {
+    color: coral;
+  }
+
+  /* 奇数 */
+  h3 p:nth-child(odd) {
+    color:cornflowerblue
+  }
   
+  .before::before {
+    content: '';
+    display: inline-block;
+    width: 2px;
+    height: 10px;
+    background: blue;
+  }
+  .before::after {
+    content: '|';
+  }
 </style>

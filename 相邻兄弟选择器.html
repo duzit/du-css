@@ -33,16 +33,26 @@
   <a href="#">a1</a>
   <p>a1 p a2</p>
   <a href="#">a2</a>
+  <div class="clp">
+    <p>段落1</p>
+    <p>段落2</p>
+    <p>段落3</p>
+  </div>
+  <div class="cls">
+    <p>hello</p>
+    <span>span</span>
+    <p>world</p>
+  </div>
 </body>
 </html>
 
 <style>
-  /* 无序列表 被选中 */
+  /* 无序列表 被选中 选择与 div 同级的 ul 元素 */
   div + ul {
     background: #aaa;
   }
 
-  /* 列表2 3 被选中 */
+  /* 列表2 3 被选中 3个li选中后面两个 */
   li + li {
     background: salmon;
   }
@@ -62,5 +72,21 @@
 
   h3 ~ a {
     color: aquamarine;
+  }
+
+  /* 选中所有 p */
+  /* .clp p {
+    color: blueviolet;
+  } */
+  /* 选中所有 p */
+  .clp > p {
+    color: brown;
+  }
+
+  /* .cls p {
+    color: chartreuse;
+  } */
+  .cls > p {
+    color: chartreuse;
   }
 </style>
