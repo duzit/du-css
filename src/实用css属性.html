@@ -10,28 +10,54 @@
   <div class="line-clamp">
     可以把 块容器 中的内容限制为指定的行数。并且在超过行数后，在最后一行显示"..."
   </div>
+  <hr>
   <input type="text">
+  <p>caret-color 用来定义插入光标的颜色</p>
+  <hr>
   <div class="clippath">
-    <img class="clip-img clip-none" src="./img.png" alt="">
+    <img class="clip-img clip-none" src="../imgs/img.png" alt="">
     We had agreed, my companion and I, that I should call for him at his house,
     after dinner, not later than eleven o’clock. This athletic young Frenchman
     belongs to a small set of Parisian sportsmen, who have taken up “ballooning”
     as a pastime. 
   </div>
   <div class="clippath">
-    <img class="clip-img clip-circle" src="./img.png" alt="">
+    <img class="clip-img clip-circle" src="../imgs/img.png" alt="">
     We had agreed, my companion and I, that I should call for him at his house,
     after dinner, not later than eleven o’clock. This athletic young Frenchman
     belongs to a small set of Parisian sportsmen, who have taken up “ballooning”
     as a pastime. 
   </div>
+  <div>
+    <img id="clipped" src="https://mdn.mozillademos.org/files/12668/MDN.svg" alt="MDN logo">
+    <svg height="0" width="0">
+      <defs>
+        <clipPath id="cross">
+          <rect y="110" x="137" width="90" height="90"/>
+          <rect x="0" y="110" width="90" height="90"/>
+          <rect x="137" y="0" width="90" height="90"/>
+          <rect x="0" y="0" width="90" height="90"/>
+        </clipPath>
+      </defs>
+    </svg>
+
+    <select id="clipPath">
+      <option value="none">none</option>
+      <option value="circle(100px at 110px 100px)">circle</option>
+      <option value="url(#cross)" selected>cross</option>
+      <option value="inset(20px round 20px)">inset</option>
+      <option value="path('M 0 200 L 0,110 A 110,90 0,0,1 240,100 L 200 340 z')">path</option>
+    </select>
+  </div>
+  <p>使用裁剪方式创建元素的可视区域</p>
+  <hr>
   <div class="object-fit">
     fill
-    <img class="fit-fill" src="./img.png" alt="">
+    <img class="fit-fill" src="../imgs/img.png" alt="">
   </div>
   <div class="object-fit">
     contain
-    <img class="fit-contain" src="./img.png" alt="">
+    <img class="fit-contain" src="../imgs/img.png" alt="">
   </div>
   <div class="fillavailable">
     <span class="fa-1">元素撑满可用空间</span>
@@ -102,6 +128,12 @@
   .fa-1 {
     display: inline-block;
     width: -webkit-fill-available
+  }
+
+  #clipped {
+    margin-bottom: 20px;
+    /* clip-path: url(#cross); */
+    clip-path: circle(100px at 110px 100px);
   }
 
 </style>
