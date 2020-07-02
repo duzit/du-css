@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css3 文本效果</title>
+</head>
+<body>
+  <h3>text-shadow 适用于文本阴影</h3>
+  <div class="text-shadow">Text Shadow</div>
+  <hr>
+  <h3>box-shadow 适用于盒子阴影</h3>
+  <div class="box-shadow"></div>
+  <hr>
+  <h3>::before ::after 伪元素添加阴影</h3>
+  <div class="shadow-before"></div>
+  <div class="shadow-after"></div>
+  <hr>
+  <h3>text-overflow 如何显示溢出文本</h3>
+  <div class="text-overflow-clip">1234567890wertyuiopsdfghjklzxcvbnm</div>
+  <div class="text-overflow-ellipsis">1234567890wertyuiopsdfghjklzxcvbnm</div>
+  <hr>
+  <h3>word-break 单词拆分换行</h3>
+  <div class="word-break-keep-all">this is test wertyuiofghjkzxcv</div>
+  <div class="word-break-break-all">this is test wertyuiofghjkxcv</div>
+</body>
+</html>
+
+<style>
+  .text-shadow {
+    text-shadow: 5px 5px 5px red;
+  }
+
+  .box-shadow {
+    width: 200px;
+    height: 100px;
+    background: royalblue;
+    box-shadow: 10px 10px 10px yellowgreen;
+  }
+
+  .shadow-before {
+    width: 200px;
+    height: 100px;
+    background: #f2f2f2;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  .shadow-before::before {
+    content: '';
+    box-shadow: 10px 10px red;
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    left: 20px;
+    height: 100px;
+    z-index: -1;
+  }
+
+  .shadow-after {
+    width: 200px;
+    height: 100px;
+    background: #f2f2f2;
+    position: relative;
+  }
+  .shadow-after::after {
+    content: '';
+    box-shadow: 10px 10px red;
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    right: 20px;
+    height: 100px;
+    z-index: -1;
+  }
+
+  .text-overflow-clip {
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+    border: 1px solid #f2f2f2;
+  }
+
+  .text-overflow-ellipsis {
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 1px solid #f2f2f2;
+  }
+
+  .word-break-keep-all {
+    width: 100px;
+    border: 1px solid #f2f2f2;
+    word-break: keep-all;
+    margin-bottom: 20px;
+  }
+
+  .word-break-break-all {
+    width: 100px;
+    border: 1px solid #f2f2f2;
+    word-break: break-all;
+  }
+</style>
