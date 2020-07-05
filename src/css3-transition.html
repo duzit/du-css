@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css3 transition</title>
+</head>
+<body>
+  <div class="transition-hover">hover 1s</div>
+  <div class="transition-click">after click</div>
+  <button onclick="btnClick()">Click</button>
+  
+  <div class="div1"></div>
+  <button onclick="btnClick1()">Click1</button>
+
+  <script>
+    let flag = false
+    function btnClick() {
+      flag = !flag
+      let btnClick = document.getElementsByClassName('transition-click')[0]
+      if (flag) {
+        btnClick.style.width = '300px'
+      } else {
+        btnClick.style.width = '200px'
+      }
+    }
+
+    let flag1 = false
+    function btnClick1() {
+      flag1 = !flag1
+      let btnClick1 = document.getElementsByClassName('div1')[0]
+      if (flag1) {
+        btnClick1.style.right = '10px'
+      } else {
+        btnClick1.style.right = '-200px'
+      }
+    }
+  </script>
+</body>
+</html>
+
+<style>
+  .transition-hover {
+    width: 200px;
+    height: 100px;
+    background-color: sandybrown;
+    transition: width 1s ease 1s;
+  }
+  .transition-hover:hover {
+    width: 300px;
+  }
+
+  .transition-click {
+    width: 200px;
+    height: 100px;
+    background-color: seagreen;
+    margin: 20px 0;
+    transition: width 1s linear;
+  }
+
+  .div1 {
+    position: absolute;
+    top: 100px;
+    right: -200px;
+    width: 200px;
+    height: 50px;
+    background-color: sienna;
+    transition: all 1s ease;
+  }
+</style>
