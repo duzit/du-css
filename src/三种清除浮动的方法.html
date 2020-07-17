@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>三种清除浮动的方法</title>
+</head>
+<body>
+  <h3>1. 在浮动元素后面加一个空的div，并为它清除浮动，适合垂直排列布局</h3>
+  <div class="div1">
+    <div class="float1"></div>
+    <div class="clear"></div>
+    <div class="no-float1"></div>
+  </div>
+  <h3>2. 利用BFC特性清除浮动</h3>
+  <div class="div2">
+    <div class="float2"></div>
+    <div class="no-float2"></div>
+  </div>
+  <h3>3. 使用：after伪元素，给浮动元素的父元素清除浮动</h3>
+  <div class="div3 clearfix">
+    <div class="float3"></div>
+  </div>
+</body>
+</html>
+
+<style>
+  .div1 {
+    width: 500px;
+    margin: auto;
+    border: 1px solid #eaeaea;
+  }
+  .float1 {
+    width: 200px;
+    height: 100px;
+    background: rebeccapurple;
+    float: left;
+  }
+  /* 不设置 .clear 时 .float1 和 .no-float1 布局会重叠。设置后 .float1 .no-float1 会垂直布局 */
+  .clear {
+    clear: both;
+  }
+  .no-float1 {
+    width: 300px;
+    height: 200px;
+    background: rosybrown;
+  }
+</style>
+
+<style>
+  .div2 {
+    width: 500px;
+    margin: auto;
+    border: 1px solid #eaeaea;
+    overflow: hidden;
+  }
+
+  /* .float2 设置 float 后 整个 div2 的高度会塌陷为 .no-float2 的高度。解决方法是 设置 .div2 和 .no-float2 为BFC（block formatting context）区域
+    设置 overflow: hidden; BFC区域不会与float box 重叠；计算BFC高度时浮动元素的高度也参与计算。 */
+  .float2 {
+    width: 200px;
+    height: 200px;
+    background: sandybrown;
+    float: left;
+  }
+  .no-float2 {
+    width: 300px;
+    height: 100px;
+    background: sienna;
+    overflow: hidden;
+  }
+</style>
+
+<style>
+  .div3 {
+    width: 500px;
+    border: 1px solid #eaeaea;
+    margin: auto;
+  }
+  .clearfix::after {
+    content: 'clear';
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+  }
+  /* .float3 设置浮动后 .div3 元素的高度会塌陷 */
+  .float3 {
+    width: 200px;
+    height: 200px;
+    background: steelblue;
+    float: left;
+  }
+</style>
