@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transform</title>
+</head>
+<body>
+  <div class="main">
+    <div class="rotate">rotate</div>
+    <div class="rotateX">rotateX</div>
+    <div class="rotateY">rotateY</div>
+    <div class="scale">scale</div>
+    <div class="scaleX">scaleX</div>
+    <div class="scaleY">scaleY</div>
+    <div class="skew">skew</div>
+    <div class="skewX">skewX</div>
+    <div class="skewY">skewY</div>
+    <div class="translate">translate</div>
+    <div class="translateX">translateX</div>
+    <div class="translateY">translateY</div>
+    <div class="perspective-rotate">
+      <div class="box">perspective-rotate</div>
+    </div>
+    <div class="transform-origin">
+      <div class="box">transform origin 100 0 0 rotate</div>
+    </div>
+    <div class="transform-origin1">
+      <div class="box">transform origin 0 100 0  rotateX</div>
+    </div>
+    <div class="transform-origin2">
+      <div class="box">transform origin 100 0 0 rotateY</div>
+    </div>
+  </div>
+  <h3>CSS 属性 perspective 指定了观察者与 z=0 平面的距离，使具有三维位置变换的元素产生透视效果。</h3>
+</body>
+</html>
+<style>
+  .main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .main > div {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background: #eaeaea;
+    transition: .5s;
+    position: relative;
+  }
+  .main .box {
+    position: absolute;
+    background: royalblue;
+    height: 100px;
+    transition: .5s;
+  }
+  .rotate:hover {
+    transform: rotate(45deg);
+  }
+  .rotateX:hover {
+    transform: rotateX(45deg);
+  }
+  .rotateY:hover {
+    transform: rotateY(45deg);
+  }
+
+  .scale:hover {
+    transform: scale(1.5)
+  }
+  .scaleX:hover {
+    transform: scaleX(1.5)
+  }
+  .scaleY:hover {
+    transform: scaleY(.5)
+  }
+
+  .skew:hover {
+    transform: skew(45deg, 45deg);
+  }
+  .skewX:hover {
+    transform: skewX(45deg);
+  }
+  .skewY:hover {
+    transform: skewY(45deg);
+  }
+
+  .translate:hover {
+    transform: translate(45px, 45px);
+  } 
+  .translateX:hover {
+    transform: translateX(45px);
+  }
+  .translateY:hover {
+    transform: translateY(45px);
+  }
+
+  .perspective-rotate {
+    perspective: 100px;
+  }
+  .perspective-rotate:hover .box {
+    transform: rotateX(45deg);
+  }
+
+  /* transform-origin要设置在.box才有效 */
+  .transform-origin .box {
+    transform-origin: 100% 0 0;
+  }
+  .transform-origin:hover .box {
+    transform: rotate(45deg);
+  }
+  .transform-origin1 .box {
+    transform-origin: 100% 0 0;
+  }
+  .transform-origin1:hover .box {
+    transform: rotateX(45deg);
+  }
+  .transform-origin2 .box {
+    transform-origin: 100% 0 0;
+  }
+  .transform-origin2:hover .box {
+    transform: rotateY(45deg);
+  }
+</style>
