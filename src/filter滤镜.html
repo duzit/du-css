@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>filter滤镜</title>
+</head>
+<body>
+  <div class="flex">
+    <img src="../imgs/img.png" alt="">
+    <img class="blur" src="../imgs/img.png" alt="">
+    <img class="contrast" src="../imgs/img.png" alt="">
+    <img class="brightness" src="../imgs/img.png" alt="">
+    <img class="drop-shodow" src="../imgs/img.png" alt="">
+    <img class="grayscale" src="../imgs/img.png" alt="">
+    <img class="hue-rotate" src="../imgs/img.png" alt="">
+  </div>
+</body>
+</html>
+
+<style>
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+
+  /* 高斯模糊 参数不接受百分比 */
+  .blur {
+    filter: blur(5px);
+  }
+
+  /* 调整对比度 值是0%的话，图像会全黑。值是100%，图像不变。值可以超过100%，意味着会运用更低的对比 */
+  .contrast {
+    filter: contrast(150%);
+  }
+
+  /* 更亮或更暗 如果值是0%，图像会全黑。值是100%，则图像无变化。其他的值对应线性乘数效果。值超过100%也是可以的，图像会比原来更亮 */
+  .brightness {
+    filter: brightness(150%);
+  }
+
+  .drop-shodow {
+    filter: drop-shadow(10px 20px 5px #eaeaea);
+  }
+
+  /* 将图像转换为灰度图像。值定义转换的比例。值为100%则完全转为灰度图像，值为0%图像无变化。值在0%到100%之间，则是效果的线性乘子 */
+  .grayscale {
+    filter: grayscale(100%);
+  }
+
+  /* 给图像应用色相旋转。“angle”一值设定图像会被调整的色环角度值。值为0deg，则图像无变化。若值未设置，默认值是0deg。该值虽然没有最大值，超过360deg的值相当于又绕一圈 */
+  .hue-rotate {
+    filter: hue-rotate(90deg);
+  }
+</style>
