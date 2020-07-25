@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>几个效率更高的css代码技巧</title>
+</head>
+<body>
+  <h3>外边距折叠</h3>
+  <p>当一个元素的下边缘接触到另一个元素的上边缘时，只会保留两个margin值较大的那个</p>
+  <div class="margin-collapse-top">margin-bottom: 20px;</div>
+  <div class="margin-collapse-bottom">margin-top: 30px;</div>
+  <hr>
+  <h3>重置css样式</h3>
+  <p>不同浏览器对对于各种元素的默认样式仍然存在很大的差异。解决方法是为所有元素设置通用的css reset</p>
+  <p>normalize.css minireset和ress 第三方库</p>
+  <hr>
+  <h3>box-sizing 设置为 border-box</h3>
+  <ul>
+    <li>content-box（默认） - 当我们设置一个元素的宽度或高度时，就是设置它的内容的大小。所有的padding和边框值都不包含。例如，一个div的宽度设置为100，padding为10，于是这个元素将占用120像素（100+2*10）</li>
+    <li>border-box - padding与边框包含在元素的宽度或高度中，一个设置为width: 100px和box-sizing:border-box的div元素，他的总宽度就是100px，无论它的内边距和边框有多少</li>
+  </ul>
+  <hr>
+  <h3>使用transform创建动画</h3>
+  <div class="transform-div"></div>
+  <hr>
+  <h3>压缩css文件</h3>
+  <ul>
+    <li>在线工具：CSS Minifier, CSS Compressor</li>
+    <li>代码库：Minfiy (php), CSSO, CSSNano (PostCSS, Grunt, Gulp)</li>
+  </ul>
+  <h3>参考链接
+    <a href="https://mp.weixin.qq.com/s/3lU_lUCnr_g4nAqMlibA_A" target="_blank">link</a>
+  </h3>
+</body>
+</html>
+
+<style>
+  /* 重置css样式 */
+  /* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  } */
+
+
+
+  div {
+    width: 200px;
+    height: 100px;
+    background: rebeccapurple;
+  }
+
+  .margin-collapse-top {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .margin-collapse-bottom {
+    color: #fff;
+    margin-top: 30px;
+  }
+
+  .transform-div {
+    transition: .3s;
+  }
+  .transform-div:hover {
+    transform: translateX(200px);
+  }
+</style>
