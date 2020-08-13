@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getComputedStyle</title>
+  <script>
+    window.onload = () => {
+      let titleEle = document.getElementsByClassName('title')[0];
+      let comStyles = window.getComputedStyle(titleEle, null);
+      let template = `
+        <h3>getComputedStyle 可以获取元素的所样式 包括内联样式 class id等 支持读 不支持写</h3>
+        <ul>
+          <li>${comStyles.width}</li>
+          <li>${comStyles.height}</li>
+          <li>${comStyles.background}</li>
+          <li>${comStyles.color}</li>
+          <li>${comStyles.fontSize}</li>
+        </ul>
+      `;
+
+      let styleStyle = titleEle.style;
+      let styleTpl = `
+        <h3>style 只包含内联样式  支持读写</h3>
+        <ul>
+          <li>${styleStyle.width}</li>
+          <li>${styleStyle.height}</li>
+          <li>${styleStyle.background}</li>
+          <li>${styleStyle.color}</li>
+          <li>${styleStyle.fontSize}</li>
+        </ul>
+      `;
+
+      let ele1 = document.getElementById('template1');
+      ele1.innerHTML = template;
+
+      let ele2 = document.getElementById('template2');
+      ele2.innerHTML = styleTpl;
+    }
+  </script>
+</head>
+<body>
+  <div class="title" style="color: red;font-size: 20px">getComputedStyle</div>
+  <div id="template1"></div>
+  <div id="template2"></div>
+</body>
+</html>
+
+<style>
+  .title {
+    width: 200px;
+    height: 100px;
+    background: rebeccapurple;
+  }
+
+  #template1 {
+    
+  }
+</style>
