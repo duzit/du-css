@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>获取元素位置</title>
+  <script>
+    window.onload = () => {
+
+      let body = document.getElementById('app');
+      console.log(
+        {
+          width: body.offsetWidth,
+          height: body.offsetHeight,
+          top: body.offsetTop,
+          left: body.offsetLeft
+        }
+      );
+
+      let scrollTop = body.scrollTop;
+      console.log(scrollTop, 111);
+
+      let btn = document.getElementById('btn');
+
+      console.log(
+        {
+          width: btn.offsetWidth || 0,
+          height: btn.offsetHeight,
+          top: btn.offsetTop,
+          left: btn.offsetLeft
+        }
+      );
+
+    }
+    function scrollBottom() {
+      let father = document.getElementById('app');
+      father.scrollTop = father.scrollHeight;
+
+      setTimeout(() => {
+        let btn = document.getElementById('btn');
+        console.log(father.scrollTop, 'father.scrollTop');
+        console.log(
+          {
+            width: btn.offsetWidth || 0,
+            height: btn.offsetHeight,
+            top: btn.offsetTop,
+            left: btn.offsetLeft
+          }
+        );
+      }, 10);
+    }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <div class="header">
+      <button onclick="scrollBottom()">滚动底部</button>
+    </div>
+    <div class="main"></div>
+    <div class="footer">
+      <button id="btn">确认按钮</button>
+    </div>
+  </div>
+</body>
+</html>
+
+<style>
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #app {
+    height: 100vh;
+    overflow: auto;
+  }
+  .header {
+    height: 100px;
+    background: #f2f2f2;
+  }
+  .main {
+    height: 800px;
+    background: rebeccapurple;
+    margin-top: 20px;
+  }
+
+  .footer {
+    height: 100px;
+    background: #f2f2f2;
+    margin-top: 20px;
+  }
+</style>
