@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字符串换行相关属性</title>
+</head>
+<body>
+  <h3>hyphens 换行可加字符-</h3>
+  <div lang="en" class="none">hyphens hello moto to you!</div>
+  <div lang="en" class="manual">hyphens hello moto to you!</div>
+  <div lang="en" class="auto">hyphens hello moto to you!</div>
+  <h3>指定行数隐藏</h3>
+  <div class="line-clamp">向响应式对象中添加一个属性，并确保这个新属性也是响应式的，且触发视图更新。必须用于向响应式对象上添加属性，因为Vue无法探测普通的新增属性。</div>
+  <h3>overflow-wrap</h3>
+  <div class="overflow-wrap">helloworldhelloworld hello11111 moto to you!</div>
+  <h3>word-break</h3>
+  <div class="word-break">helloworldhelloworld hello11111 moto to you!</div>
+</body>
+</html>
+
+<style>
+  div {
+    width: 100px;
+    background: rebeccapurple;
+    margin-bottom: 20px;
+  }
+  .none {
+    hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+  }
+
+  .manual {
+    hyphens: manual;
+    -webkit-hyphens: manual;
+    -ms-hyphens: manual;
+  }
+
+  .auto {
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+  }
+
+  .line-clamp {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .overflow-wrap {
+    overflow-wrap: break-word;
+  }
+
+  .word-break {
+    word-break: break-all;
+  }
+</style>
