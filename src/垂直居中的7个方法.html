@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>垂直居中的7个方法</title>
+</head>
+<body>
+  <div class="main">
+    <h3>设置行高 line-height</h3>
+    <p>适用于单行的行内元素</p>
+    <div class="common line">
+      <div class="line-item"></div>
+    </div>
+    <hr>
+    
+    <h3>添加伪元素 ::before ::after</h3>
+    <p>设置伪元素高度100%</p>
+    <div class="common fake">
+      <div class="fake-item red"></div>
+      <div class="fake-item green"></div>
+      <div class="fake-item yellow"></div>
+    </div>
+    <hr>
+    
+    <h3>calc动态计算</h3>
+    <p>适用div是block</p>
+    <div class="common calc">
+      <div class="calc-item"></div>
+      <div class="calc-item"></div>
+    </div>
+    <hr>
+    
+    <h3>transform</h3>
+    <div class="common">
+      <div class="transform-item"></div>
+    </div>
+    <hr>
+
+    <h3>flex</h3>
+    <div class="common flex">
+      <div class="flex-item"></div>
+    </div>
+  </div>
+</body>
+</html>
+
+<style>
+  body {
+    height: 100vh;
+    margin: 0;
+  }
+
+  hr {
+    border-color: indigo;
+  }
+
+  .main {
+    background: gray;
+    padding: 20px 0 20px 100px;
+  }
+
+  .common {
+    width: 200px;
+    height: 200px;
+    background: #fff;
+  }
+  .line {
+    line-height: 200px;
+  }
+
+  .line-item {
+    width: 30px;
+    height: 30px;
+    display: inline-block; /* set inline-block must */
+    background: green;
+  }
+
+  /* vertical-align 指在元素内的所有元素垂直位置相互居中，并不是相对于外框的高度垂直居中，
+    针对行内元素居中 要将div设置为inline-block
+   */
+  .fake::before {
+    content: '';
+    width: 0;
+    height: 100%; /* 设置100% */
+    display: inline-block; /* 行内元素 */ 
+    vertical-align: middle;
+  }
+
+  .fake-item {
+    width: 30px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .red {
+    height: 30px;
+    background: red;
+  }
+  .green {
+    height: 60px;
+    background: greenyellow;
+  }
+  .yellow {
+    height: 30px;
+    background: yellow;
+  }
+
+  .calc {
+    position: relative;
+  }
+  .calc-item {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    float: left;
+    top: calc(50% - 15px);
+    background: turquoise;
+    margin-left: calc(50%);
+  }
+
+  .calc-item:first-child {
+    height: 60px;
+    top: calc(50% - 30px);
+    margin-left: calc(50% - 30px);
+    background: blue; 
+  }
+  
+  .transform-item {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: blueviolet;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .flex-item {
+    width: 100px;
+    height: 50px;
+    background: brown;
+  }
+</style>
