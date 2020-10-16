@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex布局的一些用法</title>
+</head>
+<body>
+  <h2><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank">可参考1</a></h2>
+  <h2><a href="https://mp.weixin.qq.com/s/Uk1cEJmqvuMbKY9VxrDoSA" target="_blank">可参考2</a></h2>
+  <h3>水平垂直居中</h3>
+  <div class="common flex-center">
+    <div class="flex-item"></div>
+  </div>
+  <h4>inline-flex</h4>
+  <div class="common inline-flex">
+    <div class="flex-item mr-20"></div>
+    <div class="flex-item mr-20"></div>
+    <div class="flex-item mr-20"></div>
+  </div>
+  <h4>flex-direction</h4>
+  <div class="common flex-direction">
+    <div class="flex-item mb-20"></div>
+    <div class="flex-item mb-20"></div>
+    <div class="flex-item mb-20"></div>
+  </div>
+  <h4>子元素使用 align-self: center 居中</h4>
+  <div class="common flex-align">
+    <div class="flex-item item-align-self"></div>
+  </div>
+  <h4>使用 place-content place-item 也可搭配align-self使用</h4>
+  <div class="common flex-place">
+    <div class="flex-item"></div>
+  </div>
+  <h4>使用margin: auto</h4>
+  <div class="common flex-margin">
+    <div class="flex-item item-margin"></div>
+  </div>
+  <hr>
+  <h3>Sticky footer</h3>
+  <div class="sticky-footer">
+    <header>header</header>
+    <main>main</main>
+    <footer>footer</footer>
+  </div>
+  <hr>
+  <h3>均分列</h3>
+  <div class="common flex-sharing">
+    <div class="share-item flex-item mr-20"></div>
+    <div class="share-item flex-item mr-20"></div>
+    <div class="share-item flex-item"></div>
+  </div>
+  <h4>宽度不够 自动换行 flex: 1 0 300px 可以自动填充宽度</h4>
+  <div class="flex-wrap">
+    <div class="wrap-item"></div>
+    <div class="wrap-item"></div>
+    <div class="wrap-item"></div>
+    <div class="wrap-item"></div>
+    <div class="wrap-item"></div>
+  </div>
+  <hr>
+  <h3>clamp</h3>
+  <div class="clamp-width"></div>
+</body>
+</html>
+
+<style>
+  .common {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #000;
+  }
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inline-flex {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flex-direction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flex-item {
+    width: 30px;
+    height: 30px;
+    background: chocolate;
+  }
+
+  .flex-align {
+    display: flex;
+    justify-content: center;
+  }
+  .item-align-self {
+    align-self: center;
+  }
+
+  .flex-place {
+    display: flex;
+    place-content: center;
+    place-items: center;
+  }
+
+  .flex-margin {
+    display: flex;
+  }
+  .item-margin {
+    margin: auto;
+  }
+
+  .mr-20 {
+    margin-right: 20px;
+  }
+
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+
+  .sticky-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+    background: #f2f2f2;
+  }
+  .sticky-footer header {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background: cornflowerblue;
+    text-align: center;
+  }
+  .sticky-footer main {
+    width: 100%;
+    text-align: center;
+    flex: 1 0 auto;
+    /*
+      flex-grow: 1; 容器有剩余空间时，main区域会扩展 定义项目的放大比例 默认为0 即如果有剩余空间也不放大
+      flex-shrink: 0; 容器有不足空间时，main区域不会收缩 定义项目缩小比例 默认为1 即如果空间不足 该项目将缩小
+      flex-basis: auto; main区域高度的基准值为main内容自动高度 也可设置具体的像素值
+    */
+    background: darkgoldenrod;
+  }
+  .sticky-footer footer {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: cyan;
+    margin-top: auto; /* 置于底部 */
+  }
+
+  .flex-sharing {
+    display: inline-flex;
+    inline-size: 100%; /* width: 100% */
+    min-inline-size: 600px; /* min-width: 600px; 小于600px 会被覆盖 */
+    align-items: center;
+  }
+  .share-item {
+    flex: 1;
+  }
+
+  .flex-wrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #000;
+  }
+  .wrap-item {
+    width: 300px;
+    height: 100px;
+    background: coral;
+    border: 1px solid #f5f5f5;
+    flex: 1 0 300px;
+  }
+
+  .clamp-width {
+    width: clamp(100px, 50vw, 600px);
+    height: 100px;
+    background: cornflowerblue;
+    border: 1px solid #000;
+  }
+</style>
