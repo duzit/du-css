@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "11982750",
+      "name": "Favorite, star, rate",
+      "font_class": "Favoritestarrate",
+      "unicode": "e9df",
+      "unicode_decimal": 59871
+    }
+  ]
+}

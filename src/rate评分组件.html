@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/font_hrnve96vur/iconfont.css">
+  <title>rate 评分组件</title>
+</head>
+<body>
+  <div class="rate-content">
+    <input type="radio" name="rate">
+    <input type="radio" name="rate">
+    <input type="radio" name="rate">
+    <input type="radio" name="rate">
+    <input type="radio" name="rate">
+  </div>
+</body>
+</html>
+
+<style>
+  input {
+    appearance: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  :root {
+    --main: #ffa832;
+    --basic: #999;
+  }
+
+  .rate-content input[name='rate'] {
+    font-family: 'iconfont';
+    font-size: 30px;
+    padding-right: 10px;
+    transition: transform .2s ease;
+  }
+
+  .rate-content input[name='rate']::after {
+    /* content 要跟  iconfont.css 中一致 */
+    content: '\e9df';
+    color: var(--basic);
+    transition: color .4s ease;
+  }
+
+  .rate-content input[name='rate']:checked::after,
+  input[name='rate']:checked ~ input[name='rate']::after {
+    content: '\e9df';
+    color: var(--main);
+  }
+
+  .rate-content {
+    display: inline-flex;
+    flex-flow: row-reverse;
+  }
+
+  input[name='rate']:hover {
+    transform: scale(1.2);
+  }
+</style>
