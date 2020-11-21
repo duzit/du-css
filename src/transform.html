@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>transform</title>
 </head>
+<!-- transform 实现 旋转 偏移 缩放等 -->
 <body>
   <div class="main">
     <div class="rotate">rotate</div>
@@ -55,6 +56,7 @@
     height: 100px;
     transition: .5s;
   }
+  /* 旋转 deg 单位是度数 */
   .rotate:hover {
     transform: rotate(45deg);
   }
@@ -65,6 +67,7 @@
     transform: rotateY(45deg);
   }
 
+  /* 缩放 单位是缩放倍数 */
   .scale:hover {
     transform: scale(1.5)
   }
@@ -75,6 +78,7 @@
     transform: scaleY(.5)
   }
 
+  /* 倾斜 偏移 单位是度数 */
   .skew:hover {
     transform: skew(45deg, 45deg);
   }
@@ -85,6 +89,7 @@
     transform: skewY(45deg);
   }
 
+  /* 平移 translate(x, y) */
   .translate:hover {
     transform: translate(45px, 45px);
   } 

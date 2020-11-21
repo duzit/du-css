@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animation</title>
+  <script>
+    window.onload = () => {
+
+    }
+    function btnClick() {
+      const ele = document.getElementById('jumpId');
+      ele.style.display = 'block';
+    }
+  </script>
+</head>
+<body>
+  <div class="animation-main">
+    <div class="main1">
+      <div class="scroll-content">
+        <div>Hello 111</div>
+        <div>Hello 222</div>
+        <div>Hello 333</div>
+        <div>Hello 444</div>
+        <div>Hello 555</div>
+        <div>Hello 111</div>
+      </div>
+    </div>
+
+    <div class="main2">
+      <button onclick="btnClick()">点击</button>
+      <div id="jumpId" class="jump"></div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+<style>
+  @keyframes scroll {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(0, -100px);
+    }
+  }
+
+  .main1 {
+    width: 200px;
+    height: 30px;
+    background: #f2f2f2; 
+    overflow: hidden;
+    position: relative;
+  }
+  .scroll-content {
+    animation-name: scroll;
+    animation-duration: 5s; /* 完成动画需要的时间 */
+    /* 指定动画将如何完成一个周期 
+      linear 从头到尾速度是相同的 
+      ease 默认，低速开始 然后加速 结束前变慢
+    */
+    animation-timing-function: linear; 
+    animation-iteration-count: infinite; /* 定义动画播放次数 infinite 表示无限循环 */
+  }
+
+  @keyframes jump {
+    0% {
+      opacity: 0;
+      top: -100%;
+    }
+    25% {
+      opacity: 1;
+      top: 60;
+    }
+    50% {
+      opacity: 1;
+      top: 48%;
+    }
+    75% {
+      opacity: 1;
+      top: 52%;
+    }
+    100% {
+      opacity: 1;
+      top: 50%;
+    }
+  }
+
+  .main2 {
+    margin-top: 40px;
+  }
+  .jump {
+    position: absolute; /* 设置绝对定位 must */
+    display: none;
+    width: 200px;
+    height: 100px;
+    background: rebeccapurple;
+    border-radius: 4px;
+    animation: jump 1s cubic-bezier(0.21, 0.85, 1, 1) 1 forwards;
+  }
+</style>
