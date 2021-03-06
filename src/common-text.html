@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+</head>
+<body>
+  <h3>writing-mode 排版竖文</h3>
+  <div class="flex">
+    <div class="write-mode">窗前明月光</div>
+    <div class="write-mode">疑是地上霜</div>
+  </div>
+  <h3>text-align-last对齐两端文本</h3>
+  <div class="last-btn">密码</div>
+  <div class="last-btn">用户名</div>
+  <div class="last-btn">重置密码</div>
+  <h3>使用letter-spacing排版倒序文本</h3>
+  <div class="let-space">平安喜乐</div>
+  <h3>使用margin-left排版左重右轻列表</h3>
+  <ul>
+    <li>窗户</li>
+    <li>桌子</li>
+    <li>电脑</li>
+    <li>鼠标</li>
+  </ul>
+</body>
+</html>
+
+<style>
+  h3 {
+    position: relative;
+  }
+  h3::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: -6px;
+    display: inline-block;
+    width: 4px;
+    height: 16px;
+    background: #409EFF;
+  }
+
+  .flex {
+    display: flex;
+  }
+  .write-mode {
+    writing-mode: vertical-lr;
+  }
+
+  .last-btn {
+    width: 100px;
+    height: 20px;
+    padding: 10px;
+    background: #f2f2f2;
+    color: #000;
+    margin-bottom: 10px;
+    text-align-last: justify;
+  }
+
+  .let-space {
+    letter-spacing: -40px;
+    padding-left: 100px;
+  }
+
+  ul {
+    display: flex;
+  }
+  li {
+    list-style: none;
+  }
+  li:not(:last-child) {
+    margin-right: 10px;
+  }
+  li:last-child {
+    margin-left: auto;
+  }
+</style>

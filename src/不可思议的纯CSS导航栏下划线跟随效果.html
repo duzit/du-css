@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>不可思议的纯CSS导航栏下划线跟随效果</title>
+</head>
+<body>
+  <ul>
+    <li>Tab1</li>
+    <li>Tab2</li>
+    <li>Tab3</li>
+    <li>Tab4</li>
+  </ul>
+  <a href="https://github.com/chokcoco/iCSS/issues/33" target="_blank">Link</a>
+</body>
+</html>
+
+<style>
+  ul {
+    display: flex;
+    position: absolute;
+    /* width: 800px; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  ul li {
+    list-style: none;
+  }
+
+  li {
+    padding: 10px;
+    position: relative; /* before 的父元素 */
+    font-size: 24px;
+    color: #000;
+    transition: 0.2s all linear;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 0;
+    height: 100%;
+    border-bottom: 2px solid #000;
+    transition: 0.2s all linear;
+  }
+
+  li:hover::before {
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition-delay: 0.1s;
+    border-bottom-color: #000;
+    z-index: -1;
+  }
+
+  li:hover ~ li::before {
+    left: 0;
+  }
+
+  li:active {
+    background: #000;
+    color: #fff;
+  }
+</style>
