@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Width Height Box-sizing</title>
+</head>
+<body>
+  <!-- width 的默认值是 auto -->
+  <div class="box1">
+    box1
+    <div class="box1-child">box1-child</div>
+  </div>
+  <hr>
+  <!-- 文字少时居中显示 文字超过一行时居左显示 -->
+  <h4>文字少时居中显示 文字超过一行时居左显示</h4>
+  <div class="box2">
+    <p class="box2-child">按钮内容-按钮内容-按钮内容-按钮内容-按钮内容-按钮内容</p>
+  </div>
+  <hr>
+  <!-- 凸凹效果 -->
+  <h4>凸凹效果</h4>
+  <div class="ao"></div>
+  <hr>
+  <!-- 高度动画效果 -->
+  <h4>高度动画效果 min-height 初始值不是 0</h4>
+  <div class="box-min-height">min-height</div>
+  <hr>
+  <!-- box-sizing -->
+  <h4>box-sizing</h4>
+  <div class="box-sizing">
+
+  </div>
+</body>
+
+<style>
+  .box-sizing {
+    border: 10px solid;
+    width: 200px;
+    height: 100px;
+    /* box-sizing: border-box; */
+    box-sizing: content-box;
+    padding: 10px;
+  }
+
+  .box1 {
+    position: relative;
+    background-color: aqua;
+  }
+  .box1-child {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    background-color: bisque;
+  }
+
+  .box2 {
+    text-align: center;
+    border: 1px solid #f2f2f2;
+  }
+  .box2-child {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .ao {
+    display: inline-block;
+    width: 0;
+  }
+  .ao::before {
+    content: 'loveabc 你 love';
+    outline: 2px solid #f2f2f2;
+    color: #fff;
+  }
+
+  .box-min-height {
+    /* 如果不设置 min-height: 0; 不会有动画效果 */
+    min-height: 0; 
+    transition: min-height .5s;
+    border: 1px solid ;
+  }
+  .box-min-height:hover {
+    min-height: 200px;
+  }
+
+</style>
+
+</html>
