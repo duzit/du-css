@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>margin</title>
+</head>
+<body>
+  <div class="margin-content">
+    <div class="son"></div>
+  </div>
+  <!-- 元素尺寸 包含 padding border 也就是元素的 border box 原生DOM的 offsetWidth offsetHeight -->
+  <!-- 元素内部尺寸 包含 padding 但不包含 border 元素的 padding box 原生DOM的 clientWidth clientHeight 也叫元素可视尺寸 -->
+  <!-- 元素外部尺寸 包含 margin padding border 元素的 margin box 尺寸 -->
+  <div class="ele-content">
+    <div id="content-item" class="ele-content-item"></div>
+  </div>
+
+  <!-- padding 会改变元素的可视尺寸 -->
+  <!-- 只有元素是‘充分利用可用空间’时 margin 才会改变可视尺寸 -->
+  <div class="wh200 bg1">margin 不会改变width</div> 
+  <div class="wh200 bg2">
+    <!-- 此时 div 宽度是 160px -->
+    <div class="m20">margin 会改变width</div>
+  </div>
+
+  <!-- 一侧定宽 一侧自适应 -->
+  <div class="box1 mt20">
+    <img src="../../imgs/img.png" alt="">
+    <p>hello it is me! 不以解决实际业务痛点的更新都是耍流氓，下面我们来列举一下Vue3之前我们或许会面临的问题    </p>
+  </div>
+
+  <ul class="ul-li">
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+  </ul>
+</body>
+<style>
+  .wh200 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .bg1 {
+    background-color: bisque;
+  }
+
+  .bg2 {
+    background-color: blue;
+  }
+
+  .m20 {
+    margin: 20px;
+  }
+
+  .mt20 {
+    margin-top: 20px;
+  }
+
+  .margin-content {
+    width: 300px;
+    height: 200px;
+    border: 1px solid rebeccapurple;
+  }
+
+  .son {
+    width: 200px;
+    height: 100px;
+    background-color: aquamarine;
+  }
+
+  .ele-content {
+    width: 300px;
+    height: 200px;
+    margin-top: 20px;
+    border: 2px solid gray;
+    padding: 20px;
+  }
+
+  .ele-content-item {
+    width: 100px;
+    height: 100px;
+    background-color: greenyellow;
+    padding: 20px;
+    border: 2px solid gray;
+  }
+
+  .margin-1 {
+    width: 300px;
+    height: 200px;
+    background-color: bisque;
+    margin: 0 -20px;
+  }
+
+  .box1 {
+    overflow: hidden;
+  }
+
+  .box1 > img {
+    float: left;
+  }
+  .box1 > p {
+    margin-left: 330px;
+  }
+
+  .ul-li {
+    /* width: 360px; */
+    list-style: none;
+    border: 2px solid ;
+    overflow: hidden;
+  }
+  .ul-li > li {
+    width: 100px;
+    float: left;
+    margin-right: 20px;
+    background-color: brown;
+  }
+</style>
+</html>
