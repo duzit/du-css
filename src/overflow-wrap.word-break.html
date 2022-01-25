@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>overflow-wrap.word-break</title>
+</head>
+<body>
+  <div class="block1">
+    i am handsome boy! <span>abcdedfghijklmn</span>
+  </div>
+  <div class="block2">
+    i am handsome boy! <span>abcdedfghijklmn</span>
+  </div>
+</body>
+</html>
+
+<!-- word-break: break-word 将在文本可能溢出其容器的确切位置创建一个断点。 -->
+<!-- overflow-wrap仅在无法将整个单词放在自己的行而不会溢出的情况下才会产生中断。 -->
+
+<style>
+  div {
+    width: 100px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+  }
+  span {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .block1 {
+    overflow-wrap: break-word;
+  }
+
+  .block2 {
+    word-break: break-word;
+  }
+</style>

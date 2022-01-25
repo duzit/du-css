@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Css Animation</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+
+    .box1 {
+      animation: background-color 2s;
+      background-color: darkcyan;
+    }
+
+    @keyframes background-color {
+      0% {
+        background-color: bisque;
+      }
+
+      30% {
+        background-color: blueviolet;
+      }
+
+      50% {
+        background-color: cadetblue;
+      }
+
+      80% {
+        background-color: crimson;
+      }
+
+      100% {
+        background-color: cyan;
+      }
+    }
+
+    .box2 {
+      background-color: darkgoldenrod;
+      animation-name: background-color;
+      animation-duration: 3s;
+      animation-delay: 2s;
+      animation-direction: alternate-reverse;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes move {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(100px);
+      }
+    }
+
+    .box3 {
+      background-color: darkgoldenrod;
+      animation: move 2s infinite;
+      animation-delay: 2s; 
+    }
+
+    .loading {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      border: 2px solid springgreen;
+    }
+
+    .loading .item {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: darkgrey;
+      position: absolute;
+      top: 60px;
+      left: 60px;
+    }
+
+    .item:nth-child(1) {
+      animation: rotate 2s infinite linear;
+    }
+    .item:nth-child(2) {
+      animation: rotate 2s infinite -1s linear;
+    }
+    .item:nth-child(3) {
+      animation: rotate 2s infinite -2s linear;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: translate(0);
+      }
+
+      100% {
+        transform: translate(100px);
+      }
+    }
+
+    .box4 {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 5px;
+      border: 1px solid #000;
+      padding: 20px;
+      height: 200px;
+    }
+
+    .box4 li {
+      background: #000;
+      list-style: none;
+      width: 10px;
+      height: 10px;
+      animation: translateMove 2s infinite 1s linear;
+    }
+
+    @for $i from 1 to 7 {
+
+    }
+
+    @keyframes translateMove {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(0, 100px);
+      }
+    }
+
+    .box5 {
+      width: 20px;
+      height: 20px;
+      background: rgba(49, 136, 68, 1);
+      border-radius: 50%;
+      animation: status 1s infinite linear;
+    }
+    @keyframes status {
+      0% {
+        background: rgba(49, 136, 68, 0.5);
+        transform: scale(0.5);
+      }
+
+      50% {
+        background: rgba(49, 136, 68, 0.8);
+        transform: scale(1);
+      }
+
+      100% {
+        background: rgba(49, 136, 68, 1);
+        transform: scale(1.5);
+      }
+    }
+  </style>
+  <script>
+    // animation-delay 设置延时 从元素加载完成后到动画序列开始执行这段时间
+  </script>
+</head>
+<body>
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <div class="box3"></div>
+
+  <div class="loading">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+  <ul class="box4">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <div class="box5"></div>
+</body>
+</html>

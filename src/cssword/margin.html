@@ -36,11 +36,33 @@
     <li>列表2</li>
     <li>列表3</li>
   </ul>
+
+  <div class="o-hidden">
+    <div class="margin-dg1">
+      <p>hdhfhhf</p>
+      <p>hdhfhhf</p>
+      <p>hdhfhhf</p>
+    </div>
+    <div class="margin-dg2">
+      <p>hdhhdh</p>
+    </div>
+  </div>
+
+  <div class="wh200 border w300"></div>
+  <div class="wh200 border bg1"></div>
 </body>
 <style>
   .wh200 {
     width: 200px;
     height: 200px;
+  }
+
+  .w300 {
+    width: 300px;
+  }
+
+  .border {
+    border: 4px solid;
   }
 
   .bg1 {
@@ -117,5 +139,26 @@
     margin-right: 20px;
     background-color: brown;
   }
+
+  .o-hidden {
+    overflow: hidden;
+  }
+
+  .margin-dg1,
+  .margin-dg2 {
+    margin-bottom: -9999px;
+    padding-bottom: 9999px;
+    width: 200px;
+    float: left;
+  }
+
+  .margin-dg1 {
+    background-color: aquamarine;
+  }
+
+  .margin-dg2 {
+    background-color: bisque;
+  }
+
 </style>
 </html>
