@@ -13,7 +13,7 @@
   <div class="div1"></div>
   <button onclick="btnClick1()">Click1</button>
   
-  <div class="height1"></div>
+  <div id="height1"></div>
   
   <button onclick="btnClick2()">Click2</button>
   <script>
@@ -37,6 +37,14 @@
       } else {
         btnClick1.style.right = '-200px'
       }
+    }
+
+    function btnClick2() {
+      const el = document.getElementById('height1')
+      el.style.height = '100px'
+      setTimeout(() => {
+        el.style.height = '20px'
+      }, 3000);
     }
   </script>
 </body>
@@ -73,7 +81,10 @@
     transition: all 1s ease;
   }
 
-  .height1 {
-    height: 0;
+  #height1 {
+    width: 200px;
+    height: 20px;
+    border: 1px solid;
+    transition: 0.3s height;
   }
 </style>
