@@ -1,4 +1,4 @@
 git add .
-git commit -m 'scrollHeight css height; update  transition'
+git commit -m 'add propertys vertical-align'
 git pull 
 git push 
