@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文本溢出</title>
+</head>
+<body>
+  <div class="box">
+    <p class="txt">很多 Node.js 应用会使用 NODE_ENV 来区分运行环境，但 EGG_SERVER_ENV 区分得更加精细。一般的项目开发流程包括本地开发环境、测试环境、生产环境等，除了本地开发环境和测试环境外</p>
+    <p class="title" title="很多 Node.js 应用会使用 NODE_ENV 来区分运行环境，但 EGG_SERVER_ENV 区分得更加精细。一般的项目开发流程包括本地开发环境、测试环境、生产环境等，除了本地开发环境和测试环境外">很多 Node.js 应用会使用 NODE_ENV 来区分运行环境，但 EGG_SERVER_ENV 区分得更加精细。一般的项目开发流程包括本地开发环境、测试环境、生产环境等，除了本地开发环境和测试环境外</p>
+  </div>
+
+  <div class="box2">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit illum praesentium illo, quis accusantium nostrum, debitis numquam sapiente esse pariatur doloremque provident odio repellendus ea in! Aspernatur repellat hic vitae.
+  </div>
+
+  <div class="box">
+    <p class="txt">很多 Node.js 应用会使用 NODE_ENV 来区分运行环境，但 EGG_SERVER_ENV 区分得更加精细。一般的项目开发流程包括本地开发环境、测试环境、生产环境等，除了本地开发环境和测试环境外</p>
+    <p class="title3" title="很多 Node.js 应用会使用 NODE_ENV 来区分运行环境，但 EGG_SERVER_ENV 区分得更加精细。一般的项目开发流程包括本地开发环境、测试环境、生产环境等，除了本地开发环境和测试环境外">很多 Node.js 应用会使用 NODE_ENV 来区分运行环境，但 EGG_SERVER_ENV 区分得更加精细。一般的项目开发流程包括本地开发环境、测试环境、生产环境等，除了本地开发环境和测试环境外</p>
+  </div>
+
+  <div class="box">
+    <p class="txt">很多 Node.js 应用会使用 NODE_ENV 来区分运行环境，但 EGG_SERVER_ENV 区分得更加精细。一般的项目开发流程包括本地开发环境、测试环境、生产环境等，除了本地开发环境和测试环境外</p>
+    <p class="title4" data-title="很多 Node.js 应用会使用 NODE_ENV 来区分运行环境，但 EGG_SERVER_ENV 区分得更加精细。一般的项目开发流程包括本地开发环境、测试环境、生产环境等，除了本地开发环境和测试环境外">很多 Node.js 应用会使用 NODE_ENV 来区分运行环境，但 EGG_SERVER_ENV 区分得更加精细。一般的项目开发流程包括本地开发环境、测试环境、生产环境等，除了本地开发环境和测试环境外</p>
+  </div>
+</body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+  }
+
+  .box {
+    /* 父容器一行的高度 超出 hidden */
+    line-height: 22px;
+    height: 22px;
+    overflow: hidden;
+  }
+
+  .txt {
+    /* 两行的高度 */
+    max-height: 44px;
+  }
+
+  .title {
+    background: rebeccapurple;
+    /* 相对定位 */
+    position: relative;
+    /* top 两行的高度 */
+    top: -44px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .title3 {
+    background: rebeccapurple;
+    /* 相对定位 */
+    position: relative;
+    /* top 两行的高度 */
+    top: -44px;
+    /* 关键需要设置 height 为一行的高度 */
+    height: 22px;
+    overflow: hidden;
+    text-align: justify;
+  }
+
+  .title3::before {
+    content: attr(title);
+    float: right;
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    direction: rtl;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  div + div {
+    margin-top: 20px;
+  }
+
+  .box2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    direction: rtl;
+  }
+
+  .title4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    top: -44px;
+    background: red;
+  }
+
+  .title4::after {
+    content: attr(data-title);
+    padding: 0 100px;
+  }
+
+  .title4:hover {
+    /* hover 时 要设置 inline-block */
+    display: inline-block;
+    animation: move 10s .3s linear infinite;
+  }
+
+  @keyframes move {
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+</style>

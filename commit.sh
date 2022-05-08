@@ -1,4 +1,4 @@
 git add .
-git commit -m 'add propertys vertical-align'
+git commit -m 'note textoverflow'
 git pull 
 git push 
