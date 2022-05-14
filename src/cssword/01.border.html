@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>border</title>
+</head>
+<body>
+  <!-- border-width 默认值 -->
+  <div class="box1">border-width 默认值是3px</div>
+  <div class="box2">border-style: dashed</div>
+  <div class="box3">border-style: dotted</div>
+  <div class="box4">border-style: dotted</div>
+
+  <!-- 右下方 background 定位的技巧 -->
+  <div class="box5"></div>
+  <!-- 优雅的增加点击区域大小 -->
+  <div class="box6"></div>
+  <!-- 三角形绘制 -->
+  <div class="box7"></div>
+  <div class="box8"></div>
+</body>
+
+<style>
+  div {
+    width: 200px;
+    height: 100px;
+    border-color: red; 
+  }
+
+  div + div {
+    margin-top: 20px;
+  }
+  .box1 {
+    /* border-width 默认是 3px  */
+    border: solid red; 
+  }
+
+  .box2 {
+    border-style: dashed;
+  }
+
+  .box3 {
+    border-style: dotted;
+  }
+
+  .box4 {
+    border-style: double;
+  }
+
+  .box5 {
+    width: auto;
+    background: url(../../imgs/img.png) no-repeat;
+    border: 1px solid;
+    border-right: 50px solid transparent;
+    background-position: 100% 50%;
+  }
+
+  .box6 {
+    width: 20px;
+    height: 20px;
+    background: rebeccapurple;
+    border: 10px solid red;
+    cursor: pointer;
+  }
+
+  .box7 {
+    width: 0;
+    height: 0;
+    border: 10px solid;
+    border-color: rebeccapurple transparent transparent;
+  }
+
+  .box8 {
+    width: 0;
+    height: 0;
+    border-width: 20px 10px;
+    border-style: solid;
+    border-color: rebeccapurple rebeccapurple transparent transparent;
+  }
+</style>
+</html>

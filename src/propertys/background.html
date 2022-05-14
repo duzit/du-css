@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background</title>
+  
+</head>
+<body>
+  <h2>background-clip</h2>
+  <div class="box1" id="el1">
+    This is content of box1 
+    默认是 border-box
+  </div>
+  <button onclick="handleClipClick('border-box')">border-box</button>
+  <button onclick="handleClipClick('padding-box')">padding-box</button>
+  <button onclick="handleClipClick('content-box')">padding-box</button>
+  <button onclick="handleClipClick('text')">text</button>
+
+  <h2>background-size</h2>
+  <div id="el2" class="box2"></div>
+  <button onclick="handleSizeClick('contain')">contain</button>
+  <button onclick="handleSizeClick('cover')">cover</button>
+  <button onclick="handleSizeClick('50%')">50%</button>
+  <button onclick="handleSizeClick('200px 100px')">200px 100px</button>
+  <button onclick="handleSizeClick('auto')">auto</button>
+
+  <h2>background-origin</h2>
+  <div id="el3" class="box3"></div>
+  <button onclick="handleOriginClick('border-box')">border-box</button>
+  <button onclick="handleOriginClick('padding-box')">padding-box</button>
+  <button onclick="handleOriginClick('content-box')">content-box</button>
+
+  <h2>background-position</h2>
+  <div id="el4" class="box4"></div>
+  <button onclick="handlePositionClick('left')">left</button>
+  <button onclick="handlePositionClick('25% 75%')">25% 75%</button>
+  <button onclick="handlePositionClick('top left 200px')">top left 200px</button>
+  <button onclick="handlePositionClick('top 100px left 200px')">top 100px left 200px</button>
+
+  <h2>background-attachment</h2>
+  <div id="el5" class="box5">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt cumque quam rerum cum eveniet sit, sint ut odio sequi eaque qui, officiis voluptatibus earum, tenetur dolorum. Eius officia suscipit officiis.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis amet vel nesciunt voluptas labore! Quasi exercitationem expedita inventore modi omnis! Culpa perspiciatis dolor nihil quos recusandae illo! Ab, harum placeat.
+  </div>
+  <button onclick="handleAttachmentClick('fixed')">fixed</button>
+  <button onclick="handleAttachmentClick('local')">local</button>
+  <button onclick="handleAttachmentClick('scroll')">scroll</button>
+
+</body>
+
+<script>
+  window.onload = () => {
+    
+  }
+  const handleClipClick = (type) => {
+    const el1 = document.getElementById('el1');
+    el1.style.backgroundClip = type;
+    el1.style.color = '#fff';
+    if (type === 'text') {
+      el1.style.webkitBackgroundClip = type;
+      el1.style.color = 'transparent';
+    }
+  };
+
+  const handleSizeClick = (type) => {
+    const el1 = document.getElementById('el2');
+    el1.style.backgroundSize = type;
+  };
+
+  const handleOriginClick = (type) => {
+    const el1 = document.getElementById('el3');
+    el1.style.backgroundOrigin = type;
+  };
+
+  const handlePositionClick = (type) => {
+    const el1 = document.getElementById('el4');
+    el1.style.backgroundPosition = type;
+  };
+
+  const handleAttachmentClick = (type) => {
+    const el1 = document.getElementById('el5');
+    el1.style.backgroundAttachment = type;
+  };
+</script>
+
+<style>
+  body {
+    height: 10vh;
+  }
+  div + div {
+    margin-top: 20px;
+  }
+
+  .box1 {
+    background-image: url(../../imgs/th1129.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border: 10px dashed red;
+    font-size: 40px;
+    color: #fff;
+    padding: 30px;
+  }
+
+  .box2 {
+    height: 100%;
+    background-image: url(../../imgs/th1129.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  .box3 {
+    height: 100%;
+    background-image: url(../../imgs/th1129.jpeg);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    border: 10px dashed red;
+    padding: 30px;
+  }
+
+  .box4 {
+    width: 400px;
+    height: 400px;
+    border: 2px solid;
+    background-image: url(../../imgs/3.jpeg);
+    background-repeat: no-repeat;
+  }
+
+  .box5 {
+    height: 100%;
+    border: 2px solid;
+    background-image: url(../../imgs/th1129.jpeg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+</style>
+</html>
