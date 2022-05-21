@@ -1,4 +1,4 @@
 git add .
-git commit -m 'note background border'
+git commit -m 'note line-height'
 git pull 
 git push 

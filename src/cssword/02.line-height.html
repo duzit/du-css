@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>line-height</title>
+</head>
+<body>
+  <!-- 对于非替换元素的内联元素 其可视高度完全由 line-height 决定 -->
+  <div class="box1">我的高度1</div>
+  <div class="box2">我的高度2</div>
+  
+  <div class="box3">
+    <img 
+      src="https://s.cn.bing.net/th?id=OHR.ApisMellifera_ZH-CN8078623367_1920x1080.jpg&rf=LaDigue_1920x1080.jpg" 
+      height="100"
+      alt="">
+  </div>
+
+  <div class="box4">
+    <div class="content">
+      多行垂直居中Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium repellendus nemo suscipit dignissimos maiores veritatis! Porro quia eum unde totam libero sapiente, incidunt, aut veritatis neque asperiores dignissimos veniam facilis.
+    </div>
+  </div>
+
+  <div class="box5">
+    <h3>标题title</h3>
+    <p>内容xxx</p>
+  </div>
+
+  <div class="box6">
+    <h3>标题title</h3>
+    <p>内容xxx</p>
+  </div>
+
+  <div class="box7">
+    <span>Lorem ipsum dolor </span>
+  </div>
+
+  <div class="box8">
+    <span>Lorem ipsum dolor </span>
+  </div>
+</body>
+<style>
+  div + div {
+    margin-top: 20px;
+  }
+
+  h3, p {
+    margin: 0;
+  }
+
+  .box1 {
+    font-size: 14px;
+    line-height: 0;
+    border: 1px solid;
+    background: #eee;
+  }
+
+  .box2 {
+    font-size: 0;
+    line-height: 16px;
+    border: 1px solid;
+    background: #eee;
+  }
+
+  .box3 {
+    line-height: 200px;
+  }
+
+  .box4 {
+    line-height: 100px;
+    background-color: #666;
+  }
+
+  .box4 > .content {
+    display: inline-block;
+    line-height: 20px;
+    margin: 0 20px;
+    vertical-align: middle;
+  }
+
+  .box5 {
+    font-size: 14px;
+    line-height: 1.5;
+    border: 1px solid;
+    padding: 10px;
+  }
+
+  .box5 > h3 {
+    font-size: 32px;
+  }
+
+  .box5 > p {
+    font-size: 20px;
+  }
+
+  .box6 {
+    font-size: 14px;
+    line-height: 150%;
+    border: 1px solid;
+    padding: 10px;
+  }
+
+  .box6 > h3 {
+    font-size: 32px;
+  }
+
+  .box6 > p {
+    font-size: 20px;
+  }
+
+  .box7, .box8 {
+    border: 1px solid;
+  }
+
+  .box7 {
+    line-height: 100px;
+  }
+  .box7 span {
+    line-height: 20px;
+  }
+
+  .box8 {
+    line-height: 20px;
+  }
+  .box8 span {
+    line-height: 100px;
+  }
+</style>
+</html>
