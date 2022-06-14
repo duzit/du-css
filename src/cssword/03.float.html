@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>float</title>
+</head>
+<body>
+  <div class="box1">
+    <img src="../../imgs/3.jpeg" alt="">
+  </div>
+  <!-- img 设置 float 后，p元素不会跟float元素有任何的重叠 -->
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum fugiat eligendi tenetur! Voluptates consectetur, iure eius unde laborum hic doloribus iusto quis nobis sequi laudantium temporibus consequuntur incidunt. Maiores, adipisci.</p>
+</body>
+
+<style>
+  .box1 {
+    border: 1px solid;
+  }
+
+  .box1 img {
+    /* 导致 box1 高度塌陷 */
+    float: left; 
+  }
+</style>
+</html>
