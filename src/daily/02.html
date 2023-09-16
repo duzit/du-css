@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>发光按钮hover效果</title>
+</head>
+<body>
+  <div class="main">
+    <div class="item" style="--clr: #00a6bc;">网站首页</div>
+    <div class="item" style="--clr: #0a66c2;">HTML/CSS</div>
+  </div>
+</body>
+</html>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #666;
+  }
+
+  .main .item {
+    border: 1px solid #333;
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    /* 这里设置transition hover变为非hover时 不突兀 也有过渡效果 */
+    transition: 0.3s; 
+  }
+
+  .item + .item {
+    margin-top: 20px;
+  }
+
+  .item:hover {
+    transition: 0.3s;
+    transform: scale(1.2);
+    color: var(--clr);
+    border-color: var(--clr);
+    box-shadow: 0 0 30px var(--clr);
+  }
+
+  .item::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 6px;
+    border: 1px solid var(--clr);
+    /* (height + border*2) / 2 === (6 + 1*2) / 2 = 4 */
+    bottom: -4px;
+    left: 30px;
+  }
+
+  .item:hover::before {
+    transition: 0.3s;
+    left: 60px;
+  }
+
+  .item::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 6px;
+    border: 1px solid var(--clr);
+    top: -4px;
+    right: 30px;
+  }
+
+  .item:hover::after {
+    transition: .3s;
+    right: 60px;
+  }
+
+</style>

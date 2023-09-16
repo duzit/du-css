@@ -1,4 +1,4 @@
 git add .
-git commit -m 'note float'
+git commit -m 'css daily'
 git pull 
 git push 

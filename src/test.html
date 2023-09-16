@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+</head>
+<body>
+  <div class="main">
+    <div class="item">AAA</div>
+    <div class="item special">BBB</div>
+    <div class="item son">CCC</div>
+  </div>
+
+  <div class="main main2">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+</body>
+</html>
+
+<style>
+  .main {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .item {
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px dashed;
+    margin: 10px;
+  }
+
+  /* 组合 兄弟元素 */
+  .item.special {
+    background: green;
+  }
+
+  /* 后代选择器 父子元素 */
+  .main .son {
+    background: gray;
+  }
+
+  
+
+  .main2 > * + * {
+    background: olive;
+  }
+</style>
