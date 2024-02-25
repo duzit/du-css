@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transition</title>
+</head>
+<script>
+  setTimeout(() => {
+    const ele = document.getElementById('Popup');
+    ele.classList.add('active');
+  }, 2000);
+</script>
+<body>
+  <div id="Popup" class="popup">
+    <div class="content">底部浮层</div>
+  </div>
+</body>
+</html>
+
+<style>
+  .popup {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .2s, opacity .2s;
+  }
+  .content {
+    transform: translateY(100%);
+    transition: transform .2s;
+  }
+
+  .popup.active {
+    opacity: 1;
+    visibility: visible;
+    transition-property: opacity;
+  }
+
+  .active > .content {
+    transform: translateY(0%);
+  }
+</style>

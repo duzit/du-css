@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css mask</title>
+</head>
+<body>
+  <div class="box"></div>
+  <div class="box2"></div>
+</body>
+</html>
+
+<style>
+  .box {
+    width: 200px;
+    height: 100px;
+    background: url(../imgs/th1129.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    mask: linear-gradient(135deg, transparent 15px, #fff 0)
+    top left,linear-gradient(-135deg, transparent 15px, #fff 0)
+    top right,linear-gradient(-45deg, transparent 15px, #fff 0)
+    bottom right,linear-gradient(45deg, transparent 15px, #fff 0)
+    bottom left;
+    mask-size: 50% 50%;
+    mask-repeat: no-repeat;
+    /* background: linear-gradient(); */
+    margin-bottom: 20px;
+  }
+
+  .box2 {
+    width: 200px;
+    height: 100px;
+    background: url(../imgs/th1129.jpeg);
+    background-size: cover;
+    
+  }
+</style>
