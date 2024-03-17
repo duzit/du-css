@@ -10,11 +10,20 @@
     const ele = document.getElementById('Popup');
     ele.classList.add('active');
   }, 2000);
+
+  setTimeout(() => {
+    const ele2 = document.getElementById('Popup')
+    ele2.classList.remove('active')
+  }, 4000);
 </script>
 <body>
   <div id="Popup" class="popup">
     <div class="content">底部浮层</div>
   </div>
+  <div class="main">
+    <div class="sub block">Hello sub</div>
+  </div>
+  <div class="main2 block">Hello main2</div>
 </body>
 </html>
 
@@ -34,6 +43,9 @@
   .content {
     transform: translateY(100%);
     transition: transform .2s;
+    width: 100px;
+    height: 50px;
+    background-color: rebeccapurple ;
   }
 
   .popup.active {
@@ -44,5 +56,33 @@
 
   .active > .content {
     transform: translateY(0%);
+  }
+
+  .main {
+    margin-top: 100px;
+  }
+
+  .main2 {
+    margin-top: 20px;
+    transition: transform 1s;
+  }
+
+  .block {
+    width: 100px;
+    height: 50px;
+    background-color: aqua;
+    border-radius: 8px;
+  }
+
+  .sub {
+    transition: transform 1s;
+  }
+
+  .main:hover .sub {
+    transform: translateY(-20px);
+  }
+
+  .main2:hover {
+    transform: translateY(-20px);
   }
 </style>

@@ -31,6 +31,8 @@
       <button onclick="btnClick()">点击</button>
       <div id="jumpId" class="jump"></div>
     </div>
+
+    <div class="main3"></div>
   </div>
 
 </body>
@@ -98,5 +100,30 @@
     background: rebeccapurple;
     border-radius: 4px;
     animation: jump 1s cubic-bezier(0.21, 0.85, 1, 1) 1 forwards;
+  }
+
+  .main3 {
+    width: 200px;
+    height: 100px;
+    background: rebeccapurple;
+    margin-top: 100px;
+    animation: fadeIn 2s, slideInRight 2s;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
   }
 </style>
